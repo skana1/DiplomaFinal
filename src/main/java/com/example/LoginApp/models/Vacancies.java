@@ -11,14 +11,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Companies {
+public class Vacancies {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
-    private String name;
-    private String slug;
+    private int company_id;
+    private String position;
+    private int min_salary;
+    private int max_salary;
     private String description;
-    private int manager_id;
+
 }

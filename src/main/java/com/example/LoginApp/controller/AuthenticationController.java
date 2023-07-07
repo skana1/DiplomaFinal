@@ -22,7 +22,6 @@ public class AuthenticationController {
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
     ){
-        System.out.println("KTU");
         return ResponseEntity.ok(authenticationService.register(request));
     }
 
