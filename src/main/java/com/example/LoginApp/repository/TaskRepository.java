@@ -1,9 +1,9 @@
 package com.example.LoginApp.repository;
 
-import com.example.LoginApp.models.Tasks;
+import com.example.LoginApp.models.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TasksRepository extends JpaRepository<Tasks, Integer> {
+public interface TaskRepository extends JpaRepository<Task, Integer> {
 }

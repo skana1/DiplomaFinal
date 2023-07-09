@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Builder
@@ -20,7 +19,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "user")
-public class Users implements UserDetails {
+public class User implements UserDetails {
 
     @Id @GeneratedValue (strategy = GenerationType.AUTO)
     @Column(updatable = false, nullable = false)

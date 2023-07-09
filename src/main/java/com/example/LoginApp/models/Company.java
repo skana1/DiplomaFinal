@@ -24,7 +24,7 @@ public class Company {
     private String description;
 
     @OneToMany(mappedBy = "company")
-    private Set<Users> users;
+    private Set<User> users;
 
     @Column(name = "manager_id", nullable = false, columnDefinition = "int default 0")
     private int manager_id;
@@ -33,10 +33,10 @@ public class Company {
     private Set<Employee> employees;
 
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
-    private Set<Projects> projects;
+    private Set<Project> projects;
 
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
-    private Set<Vacancies> vacancies;
+    private Set<Vacancy> vacancies;
 
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
     private Set<Interview> interview;

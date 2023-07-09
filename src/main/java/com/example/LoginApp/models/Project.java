@@ -8,26 +8,28 @@ import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
-@Builder
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
-public class Applications {
+public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
 
-    @ManyToOne()
-    private Vacancies vacancies;
+    @OneToMany(mappedBy = "projects") // duhet emri i kolones te tabela tj
+    private Set<Task> tasks;
 
     @ManyToOne()
-    private Profiles profiles;
+    private Company company;
 
-    //private int vacant_id;
-    //private int profile_id;
+    //private int company_id;
+
+    private String name;
+    private int duration;
+    private String source;
 
 }

@@ -1,37 +1,27 @@
 package com.example.LoginApp.models;
 
-import com.example.LoginApp.Enum.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-public class Tasks {
+public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
-    private int project_id;
-
-    @ManyToOne()
-    private Employee employee;
-
-    @ManyToOne()
-    private Projects projects;
-
-    //private int employee_id;
-
-    private int level;
     private String name;
-    private String description;
-    private Status status;
+    private String grade;
 
+//    private int profile_id;
 
+    @ManyToOne()
+    private Profiles profiles;
 }

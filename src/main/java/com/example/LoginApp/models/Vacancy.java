@@ -13,23 +13,27 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Projects {
+public class Vacancy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
 
-    @OneToMany(mappedBy = "projects") // duhet emri i kolones te tabela tj
-    private Set<Tasks> tasks;
-
     @ManyToOne()
     private Company company;
-
     //private int company_id;
 
-    private String name;
-    private int duration;
-    private String source;
+    private String position;
+    private int min_salary;
+    private int max_salary;
+    private String description;
+
+    @OneToMany(mappedBy = "vacancy") // duhet emri i kolones te tabela tj
+    private Set<Application> applications;
+
+    @OneToMany(mappedBy = "vacancy") // duhet emri i kolones te tabela tj
+    private Set<Interview> interview;
+
 
 }

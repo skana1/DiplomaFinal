@@ -32,7 +32,7 @@ public class Employee {
 
 
     @OneToMany(mappedBy="employee")
-    private Set<Tasks> tasks;
+    private Set<Task> tasks;
 
 
     @OneToOne(mappedBy = "employee")

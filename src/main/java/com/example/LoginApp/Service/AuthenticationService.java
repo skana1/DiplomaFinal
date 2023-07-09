@@ -3,7 +3,7 @@ package com.example.LoginApp.Service;
 import com.example.LoginApp.authenticate.AuthenticationRequest;
 import com.example.LoginApp.authenticate.AuthenticationResponse;
 import com.example.LoginApp.authenticate.RegisterRequest;
-import com.example.LoginApp.models.Users;
+import com.example.LoginApp.models.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,7 +21,7 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
-        var user = Users.builder()
+        var user = User.builder()
                 .full_name(request.getFull_name())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))

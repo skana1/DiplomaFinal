@@ -1,6 +1,6 @@
 package com.example.LoginApp.repository;
 
-import com.example.LoginApp.models.Users;
+import com.example.LoginApp.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +8,7 @@ import java.util.Optional;
 
 
 @Repository
-public interface UserRepository extends JpaRepository<Users, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
-    Optional<Users> findAllByEmail(String email);
+    Optional<User> findAllByEmail(String email);
 }

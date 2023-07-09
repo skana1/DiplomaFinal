@@ -25,10 +25,10 @@ public class Profiles {
     private int id;
 
     @OneToMany(mappedBy = "profiles") // duhet emri i kolones te tabela tj
-    private Set<Applications> applications;
+    private Set<Application> applications;
 
     @OneToMany(mappedBy = "profiles")
-    private Set<Skills> skills;
+    private Set<Skill> skills;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")

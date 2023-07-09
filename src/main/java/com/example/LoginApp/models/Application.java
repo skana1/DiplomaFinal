@@ -6,14 +6,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
 
-@Data
 @Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Interview {
+
+public class Application {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,22 +21,11 @@ public class Interview {
     private int id;
 
     @ManyToOne()
-    private Company company;
-    //private int company_id;
+    private Vacancy vacancy;
+   //private int vacant_id;
 
     @ManyToOne()
     private Profiles profiles;
-
     //private int profile_id;
-
-    private Date data;
-    private Date time;
-    private int duration;
-    private String title;
-    private String notes;
-
-    @ManyToOne()
-    private Vacancy vacancy;
-    //private int vacant_id;
 
 }
