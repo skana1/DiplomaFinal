@@ -16,14 +16,28 @@ import java.util.Set;
 public class Company {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
     private String name;
     private String slug;
     private String description;
+
+    @OneToMany(mappedBy = "company")
+    private Set<Users> users;
+
+    @Column(name = "manager_id", nullable = false, columnDefinition = "int default 0")
     private int manager_id;
 
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
     private Set<Employee> employees;
+
+    @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
+    private Set<Projects> projects;
+
+    @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
+    private Set<Vacancies> vacancies;
+
+    @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
+    private Set<Interview> interview;
 }

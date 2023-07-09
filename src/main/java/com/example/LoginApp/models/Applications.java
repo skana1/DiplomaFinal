@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Builder
 @Data
 @NoArgsConstructor
@@ -19,7 +21,13 @@ public class Applications {
     @Column(name = "id", nullable = false)
     private int id;
 
+    @ManyToOne()
+    private Vacancies vacancies;
 
-    private int vacant_id;
-    private int profile_id;
+    @ManyToOne()
+    private Profiles profiles;
+
+    //private int vacant_id;
+    //private int profile_id;
+
 }

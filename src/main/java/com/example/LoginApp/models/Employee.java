@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @Builder
@@ -21,6 +22,7 @@ public class Employee {
 
     @ManyToOne()
     private Company company;
+
     private String position;
     private Date starting_date;
     private int salary;
@@ -28,7 +30,16 @@ public class Employee {
     private String contract_type;
 
 
-    private int profile_id;
+
+    @OneToMany(mappedBy="employee")
+    private Set<Tasks> tasks;
+
+
+    @OneToOne(mappedBy = "employee")
+    private Profiles profiles;
+
+    //private int profile_id;
+
     @Column(nullable = true)
     private Date ending_date;
 

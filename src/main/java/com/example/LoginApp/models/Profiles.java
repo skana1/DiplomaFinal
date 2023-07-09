@@ -6,8 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.relational.core.sql.In;
 
 import java.util.Date;
+import java.util.Set;
 
 @Builder
 @Data
@@ -21,6 +23,20 @@ public class Profiles {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
+
+    @OneToMany(mappedBy = "profiles") // duhet emri i kolones te tabela tj
+    private Set<Applications> applications;
+
+    @OneToMany(mappedBy = "profiles")
+    private Set<Skills> skills;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private Employee employee;
+
+    @OneToMany(mappedBy = "profiles")
+    private Set<Interview> interview;
+
     private String full_name;
     private String email;
     private Long phone_number;

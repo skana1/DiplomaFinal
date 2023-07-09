@@ -19,7 +19,15 @@ public class Tasks {
     @Column(name = "id", nullable = false)
     private int id;
     private int project_id;
-    private int employee_id;
+
+    @ManyToOne()
+    private Employee employee;
+
+    @ManyToOne()
+    private Projects projects;
+
+    //private int employee_id;
+
     private int level;
     private String name;
     private String description;

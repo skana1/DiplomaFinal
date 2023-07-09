@@ -19,6 +19,9 @@ public class Skills {
     private int id;
     private String name;
     private String grade;
-    private int profile_id;
 
+//    private int profile_id;
+
+    @ManyToOne()
+    private Profiles profiles;
 }

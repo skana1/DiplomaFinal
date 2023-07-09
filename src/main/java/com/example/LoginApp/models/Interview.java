@@ -19,13 +19,24 @@ public class Interview {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
-    private int company_id;
-    private int profile_id;
+
+    @ManyToOne()
+    private Company company;
+    //private int company_id;
+
+    @ManyToOne()
+    private Profiles profiles;
+
+    //private int profile_id;
+
     private Date data;
     private Date time;
     private int duration;
     private String title;
     private String notes;
-    private int vacant_id;
+
+    @ManyToOne()
+    private Vacancies vacancies;
+    //private int vacant_id;
 
 }
