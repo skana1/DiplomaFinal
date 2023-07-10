@@ -1,17 +1,20 @@
 package com.example.LoginApp.models;
 
+import com.example.LoginApp.DateAudit;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Skill {
+@EnableJpaAuditing
+public class Skill extends DateAudit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
