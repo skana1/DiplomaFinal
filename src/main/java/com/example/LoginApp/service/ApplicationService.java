@@ -1,7 +1,7 @@
-package com.example.LoginApp.Service;
+package com.example.LoginApp.service;
 
 import com.example.LoginApp.repository.ApplicationsRepository;
-import com.example.LoginApp.Exception.ApplicationNotFoundException;
+import com.example.LoginApp.exception.ApplicationNotFoundException;
 import com.example.LoginApp.models.Application;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

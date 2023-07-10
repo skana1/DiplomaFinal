@@ -23,5 +23,5 @@ public class Skill {
 //    private int profile_id;
 
     @ManyToOne()
-    private Profiles profiles;
+    private Profile profiles;
 }

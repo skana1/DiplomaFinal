@@ -1,6 +1,6 @@
-package com.example.LoginApp.Service;
+package com.example.LoginApp.service;
 
-import com.example.LoginApp.Exception.CompanyNotFoundException;
+import com.example.LoginApp.exception.CompanyNotFoundException;
 import com.example.LoginApp.models.Company;
 import com.example.LoginApp.repository.CompanyRepository;
 import lombok.AllArgsConstructor;

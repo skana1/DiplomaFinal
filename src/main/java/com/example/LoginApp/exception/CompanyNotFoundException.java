@@ -1,4 +1,4 @@
-package com.example.LoginApp.Exception;
+package com.example.LoginApp.exception;
 
 public class CompanyNotFoundException extends RuntimeException {
     public CompanyNotFoundException(String message) {

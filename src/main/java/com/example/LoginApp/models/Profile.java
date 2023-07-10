@@ -1,12 +1,11 @@
 package com.example.LoginApp.models;
 
-import com.example.LoginApp.Enum.Gender;
+import com.example.LoginApp.enumerate.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.relational.core.sql.In;
 
 import java.util.Date;
 import java.util.Set;
@@ -17,7 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 
-public class Profiles {
+public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,8 +29,7 @@ public class Profiles {
     @OneToMany(mappedBy = "profiles")
     private Set<Skill> skills;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "profile")
     private Employee employee;
 
     @OneToMany(mappedBy = "profiles")

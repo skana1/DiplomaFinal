@@ -1,7 +1,7 @@
 package com.example.LoginApp.controller;
 
 
-import com.example.LoginApp.Service.CompanyService;
+import com.example.LoginApp.service.CompanyService;
 import com.example.LoginApp.models.Company;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class CompanyController {
     @PostMapping("/create")
     public ResponseEntity<Company> createCompany(@RequestBody Company company){
         Company newCompany =  companyService.createCompany(company);
-        return new ResponseEntity<>(company, HttpStatus.CREATED);
+        return new ResponseEntity<>(newCompany, HttpStatus.CREATED);
     }
 
     @GetMapping("/all")

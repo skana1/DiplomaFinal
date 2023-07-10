@@ -1,6 +1,6 @@
 package com.example.LoginApp.controller;
 
-import com.example.LoginApp.Service.AuthenticationService;
+import com.example.LoginApp.service.AuthenticationService;
 import com.example.LoginApp.authenticate.AuthenticationRequest;
 import com.example.LoginApp.authenticate.AuthenticationResponse;
 import com.example.LoginApp.authenticate.RegisterRequest;

@@ -25,7 +25,7 @@ public class Interview {
     //private int company_id;
 
     @ManyToOne()
-    private Profiles profiles;
+    private Profile profiles;
 
     //private int profile_id;
 

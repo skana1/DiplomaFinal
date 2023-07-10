@@ -1,4 +1,4 @@
-package com.example.LoginApp.Service;
+package com.example.LoginApp.service;
 
 import com.example.LoginApp.authenticate.AuthenticationRequest;
 import com.example.LoginApp.authenticate.AuthenticationResponse;

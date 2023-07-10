@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.example.LoginApp.Enum.Role;
+import com.example.LoginApp.enumerate.Role;
 
 @Data
 @Builder

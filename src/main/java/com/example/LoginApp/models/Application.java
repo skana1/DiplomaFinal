@@ -16,16 +16,15 @@ import lombok.NoArgsConstructor;
 public class Application {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
 
     @ManyToOne()
     private Vacancy vacancy;
-   //private int vacant_id;
 
     @ManyToOne()
-    private Profiles profiles;
-    //private int profile_id;
+    private Profile profiles;
+
 
 }

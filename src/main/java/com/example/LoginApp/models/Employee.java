@@ -29,16 +29,12 @@ public class Employee {
     private boolean insurance;
     private String contract_type;
 
-
-
     @OneToMany(mappedBy="employee")
     private Set<Task> tasks;
 
-
-    @OneToOne(mappedBy = "employee")
-    private Profiles profiles;
-
-    //private int profile_id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "profile_id", referencedColumnName = "id")
+    private Profile profile;
 
     @Column(nullable = true)
     private Date ending_date;

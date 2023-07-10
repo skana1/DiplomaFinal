@@ -1,4 +1,4 @@
-package com.example.LoginApp.Enum;
+package com.example.LoginApp.enumerate;
 
 public enum Role {
 

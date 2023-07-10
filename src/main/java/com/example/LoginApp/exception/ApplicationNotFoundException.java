@@ -1,4 +1,4 @@
-package com.example.LoginApp.Exception;
+package com.example.LoginApp.exception;
 
 public class ApplicationNotFoundException extends RuntimeException {
     public ApplicationNotFoundException(String message) {

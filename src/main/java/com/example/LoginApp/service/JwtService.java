@@ -1,4 +1,4 @@
-package com.example.LoginApp.Service;
+package com.example.LoginApp.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

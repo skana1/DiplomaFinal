@@ -1,6 +1,6 @@
 package com.example.LoginApp.configuration;
 
-import com.example.LoginApp.Service.JwtService;
+import com.example.LoginApp.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

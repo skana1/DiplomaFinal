@@ -1,7 +1,7 @@
 package com.example.LoginApp.controller;
 
 
-import com.example.LoginApp.Service.ApplicationService;
+import com.example.LoginApp.service.ApplicationService;
 import com.example.LoginApp.models.Application;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,7 +26,7 @@ public class ApplicationController {
     @PostMapping("/create")
     public ResponseEntity<Application> addApplication(Application application){
         Application newApplication = applicationService.addApplication(application);
-        return new ResponseEntity<>(application, HttpStatus.CREATED);
+        return new ResponseEntity<>(newApplication, HttpStatus.CREATED);
     }
 
     @GetMapping("/find/{id}")
