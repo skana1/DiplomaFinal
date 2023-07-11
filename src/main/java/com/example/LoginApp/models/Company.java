@@ -29,13 +29,14 @@ public class Company extends DateAudit {
     @OneToMany(mappedBy = "company")
     private Set<User> users;
 
+    // Kshu sic eshte nuk eshte foreign_key fare. eshte thjesht nji vler int kot.e shoh. njs per mom te shof fe iher prit.
     @Column(name = "manager_id", nullable = false, columnDefinition = "int default 0")
     private int manager_id;
 
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
     private Set<Employee> employees;
 
-    @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
+    @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj ku?ne hene
     private Set<Project> projects;
 
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
