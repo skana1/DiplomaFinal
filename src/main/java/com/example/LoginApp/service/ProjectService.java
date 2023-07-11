@@ -1,8 +1,6 @@
 package com.example.LoginApp.service;
 
-import com.example.LoginApp.exception.InterviewNotFoundException;
 import com.example.LoginApp.exception.ProjectNotFoundException;
-import com.example.LoginApp.models.Profile;
 import com.example.LoginApp.models.Project;
 import com.example.LoginApp.repository.ProjectRepository;
 import lombok.RequiredArgsConstructor;
