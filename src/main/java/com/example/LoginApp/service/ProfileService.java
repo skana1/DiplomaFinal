@@ -6,6 +6,7 @@ import com.example.LoginApp.models.Profile;
 import com.example.LoginApp.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -54,7 +55,7 @@ public class ProfileService {
         }
     }
 
-
+    @Transactional
     public void deleteById(Integer id) {
         profileRepository.deleteProfileById(id);
     }

@@ -1,6 +1,5 @@
 package com.example.LoginApp.controller;
 
-import com.example.LoginApp.models.Project;
 import com.example.LoginApp.models.Skill;
 import com.example.LoginApp.service.SkillService;
 import lombok.RequiredArgsConstructor;
