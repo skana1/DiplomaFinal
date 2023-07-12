@@ -1,6 +1,6 @@
 package com.example.LoginApp.models;
 
-import com.example.LoginApp.DateAudit;
+import com.example.LoginApp.DateAudit.DateAudit;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

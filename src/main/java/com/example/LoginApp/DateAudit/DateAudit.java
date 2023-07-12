@@ -1,4 +1,4 @@
-package com.example.LoginApp;
+package com.example.LoginApp.DateAudit;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -9,7 +9,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
     @MappedSuperclass
     @EntityListeners(AuditingEntityListener.class)

@@ -21,7 +21,19 @@ public class UserService {
 
         }
 
-        public List<User> getAllUsers() {
+
+    public User getCurrentUser(String email) {
+        Optional<User> existingUser = userRepository.findAllByEmail(email);
+        if (existingUser.isPresent()) {
+            User updatedUser = existingUser.get();
+            updatedUser.setEmail(email);
+            return userRepository.save(updatedUser);
+        } else {
+            throw new UserNotFoundException("User by email: " + email + " was not found");
+        }
+    }
+
+    public List<User> getAllUsers() {
             return userRepository.findAll();
         }
 
@@ -34,7 +46,7 @@ public class UserService {
             return userRepository.save(user);
         }
 
-        public User updateUser(User user) {
+        public User updatedUser(User user) {
             Optional<User> existingUser = userRepository.findById(user.getId());
             if (existingUser.isPresent()) {
                 User updatedUser = existingUser.get();
