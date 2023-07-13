@@ -22,11 +22,11 @@ public class UserService {
         }
 
 
-    public User getCurrentUser(String email) {
+    public User getCurrentUser(String email, String full_name) {
         Optional<User> existingUser = userRepository.findAllByEmail(email);
         if (existingUser.isPresent()) {
             User updatedUser = existingUser.get();
-            updatedUser.setEmail(email);
+            updatedUser.setFull_name(full_name);
             return userRepository.save(updatedUser);
         } else {
             throw new UserNotFoundException("User by email: " + email + " was not found");

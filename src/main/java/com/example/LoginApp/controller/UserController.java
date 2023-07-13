@@ -34,10 +34,8 @@ public class UserController {
     public ResponseEntity<User> updateCurrentUser(@RequestBody User updatedUser) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        User currentUser = userService.getCurrentUser(authentication.getName());
-        currentUser.setEmail(updatedUser.getEmail());
+        User currentUser = userService.getCurrentUser(authentication.getName(), updatedUser.getFull_name());
 
-       User updateUser = userService.createUser(currentUser);
         return new ResponseEntity<>(currentUser, HttpStatus.OK);
     }
 
