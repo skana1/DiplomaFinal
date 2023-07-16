@@ -1,5 +1,6 @@
 package com.example.LoginApp.controller;
 
+import com.example.LoginApp.authenticate.ChangePasswordRequest;
 import com.example.LoginApp.exception.UnauthorizedUserException;
 import com.example.LoginApp.models.User;
 import com.example.LoginApp.service.UserService;
@@ -63,6 +64,14 @@ public class UserController {
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
+    @PutMapping("/change-password")
+    public ResponseEntity<User> updateUserPassword(@RequestBody ChangePasswordRequest data) throws UnauthorizedUserException {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        User updatedUser = userService.updatePassword(data, authentication.getName());
+
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable("id") Integer id) {
