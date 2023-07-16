@@ -28,6 +28,7 @@ public class User extends DateAudit implements UserDetails {
     @Column(updatable = false, nullable = false)
     private int id;
 
+    @Column(unique = true)
     private String email;
     private String full_name;
     private String password;
@@ -35,7 +36,6 @@ public class User extends DateAudit implements UserDetails {
     private Role role;
 
     @ManyToOne
-    @JoinColumn(name = "manager_id")
     private Company company;
 
     @Override
