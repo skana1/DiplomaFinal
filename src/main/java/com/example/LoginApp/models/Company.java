@@ -1,6 +1,7 @@
 package com.example.LoginApp.models;
 
 import com.example.LoginApp.DateAudit.DateAudit;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,6 +37,7 @@ public class Company extends DateAudit {
     @Column(name = "manager_id", nullable = false, columnDefinition = "int default 0")
     private int manager_id;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
     private Set<Employee> employees;
 

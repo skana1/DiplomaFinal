@@ -36,7 +36,6 @@ public class Employee extends DateAudit {
     private Set<Task> tasks;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "profile_id", referencedColumnName = "id")
     private Profile profile;
 
     @Column(nullable = true)

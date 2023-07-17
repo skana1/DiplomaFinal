@@ -2,6 +2,7 @@ package com.example.LoginApp.models;
 
 import com.example.LoginApp.DateAudit.DateAudit;
 import com.example.LoginApp.enumerate.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,6 +32,7 @@ public class Profile extends DateAudit {
     @OneToMany(mappedBy = "profiles")
     private Set<Skill> skills;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "profile")
     private Employee employee;
 

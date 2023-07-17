@@ -1,5 +1,6 @@
 package com.example.LoginApp.controller;
 
+import com.example.LoginApp.authenticate.EmployeeCreateRequest;
 import com.example.LoginApp.models.Employee;
 import com.example.LoginApp.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +25,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Employee> addEmployee( @RequestBody Employee employee){
+    public ResponseEntity<Employee> addEmployee( @RequestBody EmployeeCreateRequest employee){
         Employee newEmployee = employeeService.addEmployee(employee);
         return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
