@@ -30,6 +30,7 @@ public class Company extends DateAudit {
     private String description;
 
     @Builder.Default
+    @JsonIgnore
     @OneToMany(mappedBy = "company", cascade = CascadeType.REMOVE)
     private Set<User> users = new HashSet<>();
 
@@ -41,12 +42,15 @@ public class Company extends DateAudit {
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
     private Set<Employee> employees;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj ku?ne hene
     private Set<Project> projects;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
     private Set<Vacancy> vacancies;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "company") // duhet emri i kolones te tabela tj
     private Set<Interview> interview;
 
