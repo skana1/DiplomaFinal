@@ -1,5 +1,6 @@
 package com.example.LoginApp.controller;
 
+import com.example.LoginApp.authenticate.ProjectCreateRequest;
 import com.example.LoginApp.models.Profile;
 import com.example.LoginApp.models.Project;
 import com.example.LoginApp.service.ProjectService;
@@ -30,7 +31,7 @@ public class ProjectController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Project> createProject(@RequestBody Project project){
+    public ResponseEntity<Project> createProject(@RequestBody ProjectCreateRequest project){
         Project newProject = projectService.createProject(project);
         return new ResponseEntity<>(newProject, HttpStatus.CREATED);
     }

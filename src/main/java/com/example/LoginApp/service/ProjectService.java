@@ -1,6 +1,8 @@
 package com.example.LoginApp.service;
 
+import com.example.LoginApp.authenticate.ProjectCreateRequest;
 import com.example.LoginApp.exception.ProjectNotFoundException;
+import com.example.LoginApp.models.Company;
 import com.example.LoginApp.models.Project;
 import com.example.LoginApp.repository.ProjectRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +17,7 @@ import java.util.Optional;
 public class ProjectService {
 
     private final ProjectRepository projectRepository;
+    private final CompanyService companyService;
 
     public List<Project> getAllProject() {
         return projectRepository.findAll();
@@ -25,8 +28,16 @@ public class ProjectService {
                 new ProjectNotFoundException("Project by Id: " + id + " was not found"));
     }
 
-    public Project createProject(Project project) {
-        return projectRepository.save(project);
+    public Project createProject(ProjectCreateRequest project) {
+        Company company = companyService.findCompanyById(project.getCompany_id());
+
+        Project buildProject = Project.builder()
+                .name(project.getName())
+                .duration(project.getDuration())
+                .source(project.getSource())
+                .company(company)
+                .build();
+        return projectRepository.save(buildProject);
     }
 
     public Project updateProject(Project project) {

@@ -1,7 +1,10 @@
 package com.example.LoginApp.service;
 
+import com.example.LoginApp.authenticate.VacancyCreateRequest;
 import com.example.LoginApp.exception.VacancyNotFoundException;
+import com.example.LoginApp.models.Company;
 import com.example.LoginApp.models.Vacancy;
+import com.example.LoginApp.repository.CompanyRepository;
 import com.example.LoginApp.repository.VacancyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,7 @@ import java.util.Optional;
 public class VacancyService {
 
     private final VacancyRepository vacancyRepository;
+    private final CompanyService companyService;
 
     public List<Vacancy> getAllVacancies() {
         return vacancyRepository.findAll();
@@ -25,8 +29,18 @@ public class VacancyService {
                 new VacancyNotFoundException("Vacancy by Id: " + id + " was not found"));
     }
 
-    public Vacancy createVacancy(Vacancy vacancy) {
-        return vacancyRepository.save(vacancy);
+    public Vacancy createVacancy(VacancyCreateRequest vacancy) {
+        System.out.println(vacancy);
+        Company foundCompany = companyService.findCompanyById(vacancy.getCompany_id());
+        Vacancy builtVacancy = Vacancy.builder()
+                .position(vacancy.getPosition())
+                .description(vacancy.getDescription())
+                .min_salary(vacancy.getMin_salary())
+                .max_salary(vacancy.getMax_salary())
+                .company(foundCompany)
+                .build();
+
+        return vacancyRepository.save(builtVacancy);
     }
 
     public Vacancy updateVacancy(Vacancy vacancy) {

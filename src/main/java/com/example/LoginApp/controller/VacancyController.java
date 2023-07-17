@@ -1,5 +1,6 @@
 package com.example.LoginApp.controller;
 
+import com.example.LoginApp.authenticate.VacancyCreateRequest;
 import com.example.LoginApp.models.Vacancy;
 import com.example.LoginApp.service.VacancyService;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +30,7 @@ public class VacancyController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Vacancy> createVacancy(@RequestBody Vacancy vacancy){
+    public ResponseEntity<Vacancy> createVacancy(@RequestBody VacancyCreateRequest vacancy){
         Vacancy newVacancy = vacancyService.createVacancy(vacancy);
         return new ResponseEntity<>(newVacancy, HttpStatus.CREATED);
     }
