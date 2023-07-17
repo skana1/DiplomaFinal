@@ -49,7 +49,6 @@ public class EmployeeService {
                 .profile(profile)
                 .position(employee.getPosition())
                 .starting_date(employee.getStarting_date())
-                .ending_date(employee.getEnding_date())
                 .contract_type(employee.getContract_type())
                 .salary(employee.getSalary())
                 .insurance(employee.isInsurance())
